@@ -123,7 +123,8 @@ def main():
     
     try:
         # Validate target
-        if not validate_target(args.target):
+        target_validation = validate_target(args.target)
+        if not target_validation['valid']:
             logger.error(f"Invalid target: {args.target}")
             sys.exit(1)
         
